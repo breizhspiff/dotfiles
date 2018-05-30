@@ -18,7 +18,7 @@ set tabstop=2           " 2 spaces for tabs
 set shiftwidth=2        " 2 spaces for indentation
 
 
-set backspace=indent,eol,start " Backspace key won't move from current line 
+set backspace=indent,eol,start " Backspace key won't move from current line
 set hlsearch " Highlight searches
 set incsearch " Highlight dynamically as pattern is typed
 set showmatch           " show matching bracket
@@ -41,4 +41,3 @@ if has("autocmd")
     " Treat .md files as Markdown
     autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
-

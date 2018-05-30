@@ -1,12 +1,13 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/deri/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+# ZSH_THEME="apple"
+ZSH_THEME="af-magic"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -45,13 +46,11 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize vagrant virtualenv pip python brew osx zsh-syntax-highlighting docker kubectl aws zsh-autosuggestions)
-
-#plugins=(git git-extras git-flow virtualenvwrapper pip python fabric django virtualenv)
+plugins=(git osx brew screen docker encode65 fabric gitfast git-extras git-flow git-flow-avh git-hubflow git_remote_branch github grails jira jsontools last-working-dir mvn perl pep8 pip pyenv python rails repo ruby scala sudo svn svn-fast-info vagrant vi-mode web-search chucknorris)
 
 # User configuration
 
-#export PATH="/Users/deri/bin/Sencha/Cmd/5.0.3.324:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/MacGPG2/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -80,30 +79,41 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-##########################
-### PERSO
+# Set Java home
+JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME
 
-# set where virutal environments will live 
-export WORKON_HOME=$HOME/VirtualEnvPython 
-# ensure all new environments are isolated from the site-packages directory 
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages' 
-# use the same directory for virtualenvs as virtualenvwrapper 
-export PIP_VIRTUALENV_BASE=$WORKON_HOME 
-# makes pip detect an active virtualenv and install to it 
-export PIP_RESPECT_VIRTUALENV=true 
+MAVEN_HOME="/usr/local/Cellar/maven/3.3.9"
+export MAVEN_HOME
 
-###########################
+PATH="${MAVEN_HOME}/bin:${PATH}"
+export PATH
 
+PATH="/Users/ronan/scripts:$PATH"
+export PATH
 
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export JAVA_HOME=`/usr/libexec/java_home`
+# Setting PATH for Python 3.3
+# The orginal version is saved in .bash_profile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/3.3/bin:${PATH}"
+#export PATH
 
-for file in ~/.{aliases,functions}; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+#export PATH
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-export PATH="/usr/local/sbin:$PATH"
+# asciidoctor transformation to PDF
+#PATH="/Applications/asciidoctor-fopub:${PATH}"
+#export PATH
+
+chuck_cow
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export NODE_PATH=:/home/ronan/npm/lib/node_modules
+export NODE_PATH=:/home/ronan/npm/lib/node_modules:/Users/ronan/npm/lib/node_modules
+export NODE_PATH=:/home/ronan/npm/lib/node_modules:/Users/ronan/npm/lib/node_modules:/usr/local/lib/node_modules
+export NODE_PATH=:/home/ronan/npm/lib/node_modules:/Users/ronan/npm/lib/node_modules:/usr/local/lib/node_modules:/usr/local/lib/node_modules
