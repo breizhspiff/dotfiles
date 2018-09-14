@@ -88,10 +88,16 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_HOME
 
+# Set Maven home
 MAVEN_HOME="/usr/local/Cellar/maven/3.3.9"
 export MAVEN_HOME
-
 PATH="${MAVEN_HOME}/bin:${PATH}"
+export PATH
+
+# Set ADR home
+ADR_HOME="/Users/ronan/Development/workspace/meziant/adr-tools"
+export ADR_HOME
+PATH="${ADR_HOME}/src:${PATH}"
 export PATH
 
 PATH="/Users/ronan/scripts:$PATH"
